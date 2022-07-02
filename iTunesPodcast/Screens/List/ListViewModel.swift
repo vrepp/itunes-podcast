@@ -9,6 +9,13 @@ import Foundation
 
 final class ListViewModel {
     
-    let title = "Podcast list"
+    @Published private(set) var title = "Podcast list"
+    
+    let service: PodcastsServiceProtocol
+    
+    init(service: PodcastsServiceProtocol = PodcastsService()) {
+        self.service = service
+    }
+    
  
 }

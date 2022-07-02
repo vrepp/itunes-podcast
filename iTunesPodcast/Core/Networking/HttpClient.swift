@@ -8,22 +8,23 @@
 import Foundation
 
 protocol HttpClientProvider: AnyObject {
-    func performRequest<T: Decodable>(endpoint: HttpEndpoint<T>) async throws -> T
-}
-
-final class HttpClient {
     typealias HttpHeaders = [String: String]
     
-    private let urlSession: URLSession
-    private let httpHeaders: HttpHeaders?
+    func performRequest<T: Decodable>(endpoint: HttpEndpoint<T>) async throws -> T
+    
+    var urlSession: URLSession { get }
+    var httpHeaders: HttpHeaders? { get }
+}
+
+final class HttpClient: HttpClientProvider {
+    let urlSession: URLSession
+    let httpHeaders: HttpHeaders?
     
     init(urlSession: URLSession = .shared, httpHeaders: HttpHeaders? = nil) {
         self.urlSession = urlSession
         self.httpHeaders = httpHeaders
     }
-}
 
-extension HttpClient: HttpClientProvider {
     /// Perform HTTP request
     func performRequest<T>(endpoint: HttpEndpoint<T>) async throws -> T where T: Decodable {
         var urlRequest = try endpoint.urlRequest()

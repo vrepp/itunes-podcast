@@ -1,5 +1,5 @@
 //
-//  PodcastAPI.swift
+//  PodcastsAPI.swift
 //  iTunesPodcast
 //
 //  Created by Valentin Rep on 29.07.2022..

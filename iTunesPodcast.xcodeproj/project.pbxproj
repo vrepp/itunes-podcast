@@ -31,7 +31,7 @@
 		A0D35C5F2870A79300F8437D /* PodcastsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C5B2870A79300F8437D /* PodcastsService.swift */; };
 		A0D35C602870A79300F8437D /* PodcastsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C5C2870A79300F8437D /* PodcastsRequest.swift */; };
 		A0D35C612870A79300F8437D /* PodcastsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C5D2870A79300F8437D /* PodcastsResponse.swift */; };
-		A0D35C622870A79300F8437D /* PodcastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C5E2870A79300F8437D /* PodcastAPI.swift */; };
+		A0D35C622870A79300F8437D /* PodcastsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C5E2870A79300F8437D /* PodcastsAPI.swift */; };
 		A0D35C652870A7C900F8437D /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C642870A7C900F8437D /* Podcast.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +80,7 @@
 		A0D35C5B2870A79300F8437D /* PodcastsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastsService.swift; sourceTree = "<group>"; };
 		A0D35C5C2870A79300F8437D /* PodcastsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastsRequest.swift; sourceTree = "<group>"; };
 		A0D35C5D2870A79300F8437D /* PodcastsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastsResponse.swift; sourceTree = "<group>"; };
-		A0D35C5E2870A79300F8437D /* PodcastAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastAPI.swift; sourceTree = "<group>"; };
+		A0D35C5E2870A79300F8437D /* PodcastsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastsAPI.swift; sourceTree = "<group>"; };
 		A0D35C642870A7C900F8437D /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,10 +241,8 @@
 		A0D35C5A2870A79300F8437D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A0D35C5E2870A79300F8437D /* PodcastsAPI.swift */,
 				A0D35C5B2870A79300F8437D /* PodcastsService.swift */,
-				A0D35C5C2870A79300F8437D /* PodcastsRequest.swift */,
-				A0D35C5D2870A79300F8437D /* PodcastsResponse.swift */,
-				A0D35C5E2870A79300F8437D /* PodcastAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -253,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				A0D35C642870A7C900F8437D /* Podcast.swift */,
+				A0D35C5C2870A79300F8437D /* PodcastsRequest.swift */,
+				A0D35C5D2870A79300F8437D /* PodcastsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -395,7 +395,7 @@
 			files = (
 				A0D35C532870A6D600F8437D /* HttpEndpoint.swift in Sources */,
 				A0D35C4D2870A5FA00F8437D /* ListViewModel.swift in Sources */,
-				A0D35C622870A79300F8437D /* PodcastAPI.swift in Sources */,
+				A0D35C622870A79300F8437D /* PodcastsAPI.swift in Sources */,
 				A0D35C5F2870A79300F8437D /* PodcastsService.swift in Sources */,
 				A0D35C612870A79300F8437D /* PodcastsResponse.swift in Sources */,
 				A04380C32869F7D2000BAEED /* Coordinator.swift in Sources */,

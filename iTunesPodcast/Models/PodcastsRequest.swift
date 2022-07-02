@@ -9,5 +9,5 @@ import Foundation
 
 struct PodcastsRequest: Encodable {
     let entity = "podcast"
-    let term: String
+    let term: String?
 }
