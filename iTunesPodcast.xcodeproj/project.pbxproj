@@ -28,6 +28,11 @@
 		A0D35C552870A6D600F8437D /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C512870A6D600F8437D /* HttpError.swift */; };
 		A0D35C562870A6D600F8437D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C522870A6D600F8437D /* API.swift */; };
 		A0D35C592870A74200F8437D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C582870A74200F8437D /* Configuration.swift */; };
+		A0D35C5F2870A79300F8437D /* PodcastsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C5B2870A79300F8437D /* PodcastsService.swift */; };
+		A0D35C602870A79300F8437D /* PodcastsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C5C2870A79300F8437D /* PodcastsRequest.swift */; };
+		A0D35C612870A79300F8437D /* PodcastsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C5D2870A79300F8437D /* PodcastsResponse.swift */; };
+		A0D35C622870A79300F8437D /* PodcastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C5E2870A79300F8437D /* PodcastAPI.swift */; };
+		A0D35C652870A7C900F8437D /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C642870A7C900F8437D /* Podcast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,11 @@
 		A0D35C512870A6D600F8437D /* HttpError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		A0D35C522870A6D600F8437D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A0D35C582870A74200F8437D /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		A0D35C5B2870A79300F8437D /* PodcastsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastsService.swift; sourceTree = "<group>"; };
+		A0D35C5C2870A79300F8437D /* PodcastsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastsRequest.swift; sourceTree = "<group>"; };
+		A0D35C5D2870A79300F8437D /* PodcastsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastsResponse.swift; sourceTree = "<group>"; };
+		A0D35C5E2870A79300F8437D /* PodcastAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastAPI.swift; sourceTree = "<group>"; };
+		A0D35C642870A7C900F8437D /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +135,8 @@
 			children = (
 				A04380CA286B1B21000BAEED /* App */,
 				A0D35C22286B996400F8437D /* Core */,
+				A0D35C632870A7C900F8437D /* Models */,
+				A0D35C5A2870A79300F8437D /* Services */,
 				A0D35C462870A5FA00F8437D /* Screens */,
 				A0D35C572870A74200F8437D /* Configuration */,
 				A04380CB286B1B2E000BAEED /* Resources */,
@@ -224,6 +236,25 @@
 				A0D35C582870A74200F8437D /* Configuration.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		A0D35C5A2870A79300F8437D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A0D35C5B2870A79300F8437D /* PodcastsService.swift */,
+				A0D35C5C2870A79300F8437D /* PodcastsRequest.swift */,
+				A0D35C5D2870A79300F8437D /* PodcastsResponse.swift */,
+				A0D35C5E2870A79300F8437D /* PodcastAPI.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A0D35C632870A7C900F8437D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0D35C642870A7C900F8437D /* Podcast.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +395,9 @@
 			files = (
 				A0D35C532870A6D600F8437D /* HttpEndpoint.swift in Sources */,
 				A0D35C4D2870A5FA00F8437D /* ListViewModel.swift in Sources */,
+				A0D35C622870A79300F8437D /* PodcastAPI.swift in Sources */,
+				A0D35C5F2870A79300F8437D /* PodcastsService.swift in Sources */,
+				A0D35C612870A79300F8437D /* PodcastsResponse.swift in Sources */,
 				A04380C32869F7D2000BAEED /* Coordinator.swift in Sources */,
 				A0D35C552870A6D600F8437D /* HttpError.swift in Sources */,
 				A0D35C3E286F418400F8437D /* Encodable+Extension.swift in Sources */,
@@ -373,7 +407,9 @@
 				A0D35C25286B99BC00F8437D /* String+Extension.swift in Sources */,
 				A04380932869F738000BAEED /* AppDelegate.swift in Sources */,
 				A0D35C27286B9A3F00F8437D /* UITableView+Extension.swift in Sources */,
+				A0D35C652870A7C900F8437D /* Podcast.swift in Sources */,
 				A04380952869F738000BAEED /* SceneDelegate.swift in Sources */,
+				A0D35C602870A79300F8437D /* PodcastsRequest.swift in Sources */,
 				A0D35C4B2870A5FA00F8437D /* ListViewController.swift in Sources */,
 				A0D35C542870A6D600F8437D /* HttpClient.swift in Sources */,
 				A0D35C452870A5CE00F8437D /* AppCoordinator.swift in Sources */,
