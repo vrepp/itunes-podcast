@@ -321,6 +321,12 @@ extension UILabel {
         self.attributedText = attributedText
         return self
     }
+    
+    @discardableResult
+    public func styleAdjustsFontForContentSizeCategory(_ shouldAdjust: Bool) -> Self {
+        self.adjustsFontForContentSizeCategory = shouldAdjust
+        return self
+    }
 }
 
 extension UITextField {

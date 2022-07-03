@@ -37,6 +37,7 @@ final class PodcastView: UIView {
             .styleNumberOfLines(0)
             .styleFont(.preferredFont(forTextStyle: .headline))
             .styleTextColor(.label)
+            .styleAdjustsFontForContentSizeCategory(true)
         
         return label
     }()
@@ -45,7 +46,8 @@ final class PodcastView: UIView {
         let label = UILabel()
             .styleNumberOfLines(0)
             .styleFont(.preferredFont(forTextStyle: .subheadline))
-            .styleTextColor(.label)
+            .styleTextColor(.secondaryLabel)
+            .styleAdjustsFontForContentSizeCategory(true)
                        
         return label
     }()
@@ -54,7 +56,8 @@ final class PodcastView: UIView {
         let label = UILabel()
             .styleNumberOfLines(0)
             .styleFont(.preferredFont(forTextStyle: .subheadline))
-            .styleTextColor(.darkGray)
+            .styleTextColor(.systemIndigo)
+            .styleAdjustsFontForContentSizeCategory(true)
                        
         return label
     }()
