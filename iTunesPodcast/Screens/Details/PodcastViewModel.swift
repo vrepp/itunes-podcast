@@ -12,6 +12,7 @@ final class PodcastViewModel {
     @Published private(set) var title = "Details"
     @Published var artistName: String = ""
     @Published var trackName: String = ""
+    @Published var releaseDate: String = ""
     
     private let podcast: Podcast
     
@@ -24,6 +25,7 @@ final class PodcastViewModel {
     private func bind() {
         artistName = podcast.artistName
         trackName = podcast.trackName
+        releaseDate = podcast.releaseDate.string(with: .longDate)
     }
 }
 

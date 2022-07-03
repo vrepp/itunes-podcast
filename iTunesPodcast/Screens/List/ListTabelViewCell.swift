@@ -11,18 +11,19 @@ import Combine
 final class ListTabelViewCell: UITableViewCell {
     // MARK: Constants
     private struct Constants {
+        static let insets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         static let stackViewSpacing: CGFloat = 20
         static let internalSpacing: CGFloat = 10
         static let thumbSize = CGSize(width: 100, height: 100)
+        static let thumbCornerRadius: CGFloat = 4
     }
     
     // MARK: Properties
-    private var subscriptions: Set<AnyCancellable> = []
-    
     private lazy var thumbImageView: UIImageView = {
         let imageView = UIImageView()
+            .styleBackgroundColor(.systemGray5)
             .styleContentMode(.scaleAspectFit)
-            .styleCornerRadius(cornerRadius: 2)
+            .styleCornerRadius(cornerRadius: Constants.thumbCornerRadius)
             .styleMakeConstraints {
                 $0.width.equalTo(Constants.thumbSize.width)
                 $0.height.equalTo(Constants.thumbSize.height)
@@ -33,13 +34,19 @@ final class ListTabelViewCell: UITableViewCell {
     
     private lazy var artistNameLabel: UILabel = {
         let label = UILabel()
+            .styleNumberOfLines(0)
+            .styleFont(.preferredFont(forTextStyle: .headline))
+            .styleTextColor(.label)
         
         return label
     }()
     
     private lazy var trackNameLabel: UILabel = {
         let label = UILabel()
-        
+            .styleNumberOfLines(0)
+            .styleFont(.preferredFont(forTextStyle: .subheadline))
+            .styleTextColor(.secondaryLabel)
+                       
         return label
     }()
     
@@ -70,7 +77,9 @@ final class ListTabelViewCell: UITableViewCell {
             .styleAlignment(.top)
             .styleDistribution(.fill)
             .styleParentView(contentView)
-            .styleMakeConstraints { $0.edges.equalToSuperview() }
+            .styleMakeConstraints {
+                $0.edges.equalTo(Constants.insets)
+            }
         
         thumbImageView
             .styleParentView(stackView)

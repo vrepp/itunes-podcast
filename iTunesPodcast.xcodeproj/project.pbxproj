@@ -41,6 +41,8 @@
 		A0D35C7428712C4000F8437D /* PodcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C7328712C4000F8437D /* PodcastViewModel.swift */; };
 		A0D35C762871E9E200F8437D /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C752871E9E200F8437D /* PodcastViewController.swift */; };
 		A0D35C782871EA4400F8437D /* PodcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C772871EA4400F8437D /* PodcastView.swift */; };
+		A0D35C7A2871F0DC00F8437D /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C792871F0DC00F8437D /* DateFormatter+Extension.swift */; };
+		A0D35C7C2871F11800F8437D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C7B2871F11800F8437D /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		A0D35C7328712C4000F8437D /* PodcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewModel.swift; sourceTree = "<group>"; };
 		A0D35C752871E9E200F8437D /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
 		A0D35C772871EA4400F8437D /* PodcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastView.swift; sourceTree = "<group>"; };
+		A0D35C792871F0DC00F8437D /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		A0D35C7B2871F11800F8437D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,8 @@
 		A0D35C23286B997400F8437D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A0D35C7B2871F11800F8437D /* Date+Extension.swift */,
+				A0D35C792871F0DC00F8437D /* DateFormatter+Extension.swift */,
 				A0D35C3D286F418400F8437D /* Encodable+Extension.swift */,
 				A0D35C24286B99BC00F8437D /* String+Extension.swift */,
 				A0D35C26286B9A3F00F8437D /* UITableView+Extension.swift */,
@@ -430,6 +436,7 @@
 				A0D35C4D2870A5FA00F8437D /* ListViewModel.swift in Sources */,
 				A0D35C622870A79300F8437D /* PodcastsAPI.swift in Sources */,
 				A0D35C5F2870A79300F8437D /* PodcastsService.swift in Sources */,
+				A0D35C7C2871F11800F8437D /* Date+Extension.swift in Sources */,
 				A0D35C782871EA4400F8437D /* PodcastView.swift in Sources */,
 				A0D35C612870A79300F8437D /* PodcastsResponse.swift in Sources */,
 				A0D35C6B2871014100F8437D /* ListTabelViewCell.swift in Sources */,
@@ -446,6 +453,7 @@
 				A0D35C25286B99BC00F8437D /* String+Extension.swift in Sources */,
 				A0D35C7428712C4000F8437D /* PodcastViewModel.swift in Sources */,
 				A04380932869F738000BAEED /* AppDelegate.swift in Sources */,
+				A0D35C7A2871F0DC00F8437D /* DateFormatter+Extension.swift in Sources */,
 				A0D35C27286B9A3F00F8437D /* UITableView+Extension.swift in Sources */,
 				A0D35C652870A7C900F8437D /* Podcast.swift in Sources */,
 				A04380952869F738000BAEED /* SceneDelegate.swift in Sources */,

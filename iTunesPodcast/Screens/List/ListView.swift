@@ -57,14 +57,14 @@ final class ListView: UIView {
             .styleParentView(self)
             .styleMakeConstraints {
                 $0.top.equalTo(safeAreaLayoutGuide.snp.top)
-                $0.leading.trailing.equalToSuperview()
+                $0.leading.trailing.equalTo(safeAreaLayoutGuide)
             }
         
         tableView
             .styleParentView(self)
             .styleMakeConstraints {
                 $0.top.equalTo(searchBar.snp.bottom)
-                $0.leading.trailing.equalToSuperview()
+                $0.leading.trailing.equalTo(safeAreaLayoutGuide)
                 $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
             }
         

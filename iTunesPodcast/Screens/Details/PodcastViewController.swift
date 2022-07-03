@@ -48,5 +48,19 @@ final class PodcastViewController: UIViewController, MainViewCustomizable {
             .sink { [weak self] in self?.navigationItem.title = $0 }
             .store(in: &subscriptions)
     
+        viewModel.$artistName
+            .receive(on: RunLoop.main)
+            .sink { [weak self] in self?.mainView.artistNameLabel.text = $0 }
+            .store(in: &subscriptions)
+        
+        viewModel.$trackName
+            .receive(on: RunLoop.main)
+            .sink { [weak self] in self?.mainView.trackNameLabel.text = $0 }
+            .store(in: &subscriptions)
+        
+        viewModel.$releaseDate
+            .receive(on: RunLoop.main)
+            .sink { [weak self] in self?.mainView.releaseDateLabel.text = $0 }
+            .store(in: &subscriptions)
     }
 }

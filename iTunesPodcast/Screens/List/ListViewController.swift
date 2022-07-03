@@ -76,7 +76,7 @@ final class ListViewController: UIViewController, MainViewCustomizable {
                 var snapshot = Snapshot()
                 snapshot.appendSections([0])
                 snapshot.appendItems(viewModels)
-                self?.dataSource.apply(snapshot, animatingDifferences: true)
+                self?.dataSource.applySnapshotUsingReloadData(snapshot)
             }
             .store(in: &subscriptions)
         
@@ -109,7 +109,9 @@ extension ListViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension ListViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let snapshot = dataSource.snapshot()
         let viewModel = snapshot.itemIdentifiers[indexPath.row]
