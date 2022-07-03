@@ -26,3 +26,17 @@ final class ListCoordinator: Coordinator {
         self.navigationController.navigationBar.prefersLargeTitles = true
     }
 }
+
+// MARK: - ListViewControllerCoordinatable
+extension ListCoordinator: ListViewControllerCoordinatable {
+    
+    func coordinateShowDetails(with viewModel: PodcastViewModel) {
+        let podcastViewController = PodcastViewController(viewModel: viewModel)
+        podcastViewController.coordinator = self
+        
+        self.navigationController.pushViewController(podcastViewController, animated: true)
+    }
+}
+
+// MARK: - PodcastViewControllerCoordinatable
+extension ListCoordinator: PodcastViewControllerCoordinatable {}

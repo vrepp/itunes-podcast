@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Podcast: Decodable {
+struct Podcast: Decodable, Hashable {
     let trackId: Int
     let artistName: String
     let trackName: String
