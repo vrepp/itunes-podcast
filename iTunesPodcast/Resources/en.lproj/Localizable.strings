@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  iTunesPodcast
+
+  Created by Valentin Rep on 03.07.2022..
+  
+*/
+
+"Error" = "Error";
+"OK" = "OK";
+
+"podcast.list.title" = "Podcast list";
+"podcast.details.title" = "Details";
+

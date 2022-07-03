@@ -9,7 +9,7 @@ import Foundation
 
 final class PodcastViewModel {
     
-    @Published private(set) var title = "Details"
+    @Published private(set) var title = "podcast.details.title".localized()
     @Published private(set) var artistName: String
     @Published private(set) var trackName: String
     @Published private(set) var releaseDate: String

@@ -17,7 +17,7 @@ final class ListViewModel {
     
     @Published var searchQuery: String = ""
     
-    @Published private(set) var title = "Podcast list"
+    @Published private(set) var title = "podcast.list.title".localized()
     @Published private(set) var state: ListViewState = .loading
     @Published private(set) var podcastViewModels: [PodcastViewModel] = []
     

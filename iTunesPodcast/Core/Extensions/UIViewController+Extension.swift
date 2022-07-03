@@ -15,8 +15,8 @@ extension UIViewController {
     
     /// Show error Alert with message
     func showErrorMessage(_ message: String) {
-        let alertViewController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alertViewController.addAction(UIAlertAction(title: "OK", style: .default))
+        let alertViewController = UIAlertController(title: "Error".localized(), message: message, preferredStyle: .alert)
+        alertViewController.addAction(UIAlertAction(title: "OK".localized(), style: .default))
         present(alertViewController, animated: true)
     }
 }
