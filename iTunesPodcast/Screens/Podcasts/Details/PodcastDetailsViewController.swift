@@ -1,5 +1,5 @@
 //
-//  PodcastViewController.swift
+//  PodcastDetailsViewController.swift
 //  iTunesPodcast
 //
 //  Created by Valentin Rep on 02.07.2022..
@@ -8,19 +8,19 @@
 import UIKit
 import Combine
 
-protocol PodcastViewControllerCoordinatable: AnyObject {}
+protocol PodcastDetailsViewControllerCoordinatable: AnyObject {}
 
-final class PodcastViewController: UIViewController, MainViewCustomizable {
+final class PodcastDetailsViewController: UIViewController, MainViewCustomizable {
     // MARK: MainViewCustomizable
-    typealias MainView = PodcastView
+    typealias MainView = PodcastDetailsView
     
-    weak var coordinator: PodcastViewControllerCoordinatable?
+    weak var coordinator: PodcastDetailsViewControllerCoordinatable?
     
-    private var viewModel: PodcastViewModel
+    private var viewModel: PodcastDetailsViewModel
     private var subscriptions: Set<AnyCancellable> = []
     
     // MARK: UIViewController Lifecycle
-    init(viewModel: PodcastViewModel) {
+    init(viewModel: PodcastDetailsViewModel) {
         self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)

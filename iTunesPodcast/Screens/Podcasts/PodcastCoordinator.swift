@@ -1,5 +1,5 @@
 //
-//  ListCoordinator.swift
+//  PodcastCoordinator.swift
 //  iTunesPodcast
 //
 //  Created by Valentin Rep on 27.06.2022..
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ListCoordinator: Coordinator {
+final class PodcastCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = [] 
     let navigationController: UINavigationController
     
@@ -18,8 +18,8 @@ final class ListCoordinator: Coordinator {
     }
     
     func start() {
-        let listViewModel = ListViewModel()
-        let listViewController = ListViewController(viewModel: listViewModel)
+        let listViewModel = PodcastListViewModel()
+        let listViewController = PodcastListViewController(viewModel: listViewModel)
         listViewController.coordinator = self
         
         self.navigationController.setViewControllers([listViewController], animated: false)
@@ -28,10 +28,10 @@ final class ListCoordinator: Coordinator {
 }
 
 // MARK: - ListViewControllerCoordinatable
-extension ListCoordinator: ListViewControllerCoordinatable {
+extension PodcastCoordinator: PodcastListViewControllerCoordinatable {
     
-    func coordinateShowDetails(with viewModel: PodcastViewModel) {
-        let podcastViewController = PodcastViewController(viewModel: viewModel)
+    func coordinateShowDetails(with viewModel: PodcastDetailsViewModel) {
+        let podcastViewController = PodcastDetailsViewController(viewModel: viewModel)
         podcastViewController.coordinator = self
         
         self.navigationController.pushViewController(podcastViewController, animated: true)
@@ -39,4 +39,4 @@ extension ListCoordinator: ListViewControllerCoordinatable {
 }
 
 // MARK: - PodcastViewControllerCoordinatable
-extension ListCoordinator: PodcastViewControllerCoordinatable {}
+extension PodcastCoordinator: PodcastDetailsViewControllerCoordinatable {}

@@ -1,5 +1,5 @@
 //
-//  ListView.swift
+//  PodcastListView.swift
 //  iTunesPodcast
 //
 //  Created by Valentin Rep on 02.07.2022..
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ListView: UIView {
+final class PodcastListView: UIView {
     // MARK: Constants
     private struct Constants {
         static let stackViewSpacing: CGFloat = 20
@@ -22,7 +22,7 @@ final class ListView: UIView {
     
     private(set) lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(cellType: ListTabelViewCell.self)
+        tableView.register(cellType: PodcastListTabelViewCell.self)
         tableView.tableFooterView = UIView()
         
         return tableView

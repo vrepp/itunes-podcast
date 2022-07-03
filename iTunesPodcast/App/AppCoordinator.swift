@@ -21,7 +21,7 @@ final class AppCoordinator: NSObject, Coordinator {
     func start() {
         navigationController.delegate = self
         
-        let childCoordinator = ListCoordinator(navigationController: navigationController)
+        let childCoordinator = PodcastCoordinator(navigationController: navigationController)
         addChild(childCoordinator)
         childCoordinator.parentCoordinator = self
         childCoordinator.start()

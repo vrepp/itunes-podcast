@@ -1,5 +1,5 @@
 //
-//  ListViewModel.swift
+//  PodcastListViewModel.swift
 //  iTunesPodcast
 //
 //  Created by Valentin Rep on 28.06.2022..
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class ListViewModel {
+final class PodcastListViewModel {
     enum ListViewState {
         case loading
         case finished
@@ -19,7 +19,7 @@ final class ListViewModel {
     
     @Published private(set) var title = "podcast.list.title".localized()
     @Published private(set) var state: ListViewState = .loading
-    @Published private(set) var podcastViewModels: [PodcastViewModel] = []
+    @Published private(set) var podcastViewModels: [PodcastDetailsViewModel] = []
     
     let service: PodcastsServiceProtocol
     
@@ -50,7 +50,7 @@ final class ListViewModel {
                     case .failure(let error):
                         self?.state = .failed(error)
                 }
-            }, receiveValue: { [weak self] in self?.podcastViewModels = $0.map { PodcastViewModel(podcast: $0) } })
+            }, receiveValue: { [weak self] in self?.podcastViewModels = $0.map { PodcastDetailsViewModel(podcast: $0) } })
             .store(in: &subscriptions)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  PodcastView.swift
+//  PodcastListTabelViewCell.swift
 //  iTunesPodcast
 //
 //  Created by Valentin Rep on 02.07.2022..
@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class PodcastView: UIView {
+final class PodcastListTabelViewCell: UITableViewCell {
     // MARK: Constants
     private struct Constants {
         static let insets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
@@ -19,7 +19,7 @@ final class PodcastView: UIView {
     }
     
     // MARK: Properties
-    private(set) lazy var thumbImageView: UIImageView = {
+    private lazy var thumbImageView: UIImageView = {
         let imageView = UIImageView()
             .styleBackgroundColor(.systemGray5)
             .styleContentMode(.scaleAspectFit)
@@ -32,81 +32,80 @@ final class PodcastView: UIView {
         return imageView
     }()
     
-    private(set) lazy var artistNameLabel: UILabel = {
+    private lazy var artistNameLabel: UILabel = {
         let label = UILabel()
             .styleNumberOfLines(0)
             .styleFont(.preferredFont(forTextStyle: .headline))
             .styleTextColor(.label)
-            .styleAdjustsFontForContentSizeCategory(true)
         
         return label
     }()
     
-    private(set) lazy var trackNameLabel: UILabel = {
+    private lazy var trackNameLabel: UILabel = {
         let label = UILabel()
             .styleNumberOfLines(0)
             .styleFont(.preferredFont(forTextStyle: .subheadline))
             .styleTextColor(.secondaryLabel)
-            .styleAdjustsFontForContentSizeCategory(true)
                        
         return label
     }()
     
-    private(set) lazy var releaseDateLabel: UILabel = {
-        let label = UILabel()
-            .styleNumberOfLines(0)
-            .styleFont(.preferredFont(forTextStyle: .subheadline))
-            .styleTextColor(.systemIndigo)
-            .styleAdjustsFontForContentSizeCategory(true)
-                       
-        return label
-    }()
-        
-    // MARK: - UIView Lifecycle
-    init() {
-        super.init(frame: .zero)
+    // MARK: UITableViewCell
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupUI()
     }
     
-    @available(*, unavailable)
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-        
-        setupUI()
-    }
-    
-    @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        
+        setupUI()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setupUI()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        thumbImageView.kf.cancelDownloadTask()
+        thumbImageView.image = nil
     }
     
     // MARK: Setup
     private func setupUI() {
-        backgroundColor = .systemBackground
-        
         let stackView = UIStackView()
-            .styleAxis(.vertical)
+            .styleAxis(.horizontal)
             .styleSpacing(Constants.stackViewSpacing)
-            .styleAlignment(.fill)
+            .styleAlignment(.top)
             .styleDistribution(.fill)
-            .styleParentView(self)
+            .styleParentView(contentView)
             .styleMakeConstraints {
-                $0.edges.equalTo(safeAreaLayoutGuide).inset(Constants.insets)
+                $0.edges.equalTo(Constants.insets)
             }
         
-        UIStackView(arrangedSubviews: [thumbImageView])
-            .styleAxis(.vertical)
-            .styleSpacing(Constants.internalSpacing)
-            .styleAlignment(.center)
-            .styleDistribution(.fill)
+        thumbImageView
             .styleParentView(stackView)
         
-        UIStackView(arrangedSubviews: [artistNameLabel, trackNameLabel, releaseDateLabel, UIView()])
+        UIStackView(arrangedSubviews: [artistNameLabel, trackNameLabel])
             .styleAxis(.vertical)
             .styleSpacing(Constants.internalSpacing)
             .styleAlignment(.leading)
             .styleDistribution(.fill)
             .styleParentView(stackView)
+    }
+}
+
+extension PodcastListTabelViewCell {
+    
+    func bind(to viewModel: PodcastDetailsViewModel) {
+        artistNameLabel.text = viewModel.artistName
+        trackNameLabel.text = viewModel.trackName
+        
+        thumbImageView.kf.setImage(with: viewModel.imageURL)
     }
 }

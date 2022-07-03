@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  PodcastListViewController.swift
 //  iTunesPodcast
 //
 //  Created by Valentin Rep on 27.06.2022..
@@ -8,25 +8,25 @@
 import UIKit
 import Combine
 
-protocol ListViewControllerCoordinatable: AnyObject {
-    func coordinateShowDetails(with modelView: PodcastViewModel)
+protocol PodcastListViewControllerCoordinatable: AnyObject {
+    func coordinateShowDetails(with modelView: PodcastDetailsViewModel)
 }
 
-final class ListViewController: UIViewController, MainViewCustomizable {
+final class PodcastListViewController: UIViewController, MainViewCustomizable {
     // MARK: MainViewCustomizable
-    typealias MainView = ListView
+    typealias MainView = PodcastListView
     
-    typealias DataSource = UITableViewDiffableDataSource<Int, PodcastViewModel>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, PodcastViewModel>
+    typealias DataSource = UITableViewDiffableDataSource<Int, PodcastDetailsViewModel>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, PodcastDetailsViewModel>
     
-    weak var coordinator: ListViewControllerCoordinatable?
+    weak var coordinator: PodcastListViewControllerCoordinatable?
     private var dataSource: DataSource!
     
-    private var viewModel: ListViewModel
+    private var viewModel: PodcastListViewModel
     private var subscriptions: Set<AnyCancellable> = []
     
     // MARK: UIViewController Lifecycle
-    init(viewModel: ListViewModel) {
+    init(viewModel: PodcastListViewModel) {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
@@ -52,7 +52,7 @@ final class ListViewController: UIViewController, MainViewCustomizable {
     // MARK: DataSource
     private func configureDataSource() {
         dataSource = DataSource(tableView: mainView.tableView, cellProvider: { tableView, indexPath, modelView -> UITableViewCell? in
-            let cell = tableView.dequeueReusableCell(with: ListTabelViewCell.self, for: indexPath)
+            let cell = tableView.dequeueReusableCell(with: PodcastListTabelViewCell.self, for: indexPath)
             cell.bind(to: modelView)
             return cell
         })
@@ -98,7 +98,7 @@ final class ListViewController: UIViewController, MainViewCustomizable {
 }
 
 // MARK: - UISearchBarDelegate
-extension ListViewController: UISearchBarDelegate {
+extension PodcastListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchQuery = searchText
@@ -110,7 +110,7 @@ extension ListViewController: UISearchBarDelegate {
 }
 
 // MARK: - UITableViewDelegate
-extension ListViewController: UITableViewDelegate {
+extension PodcastListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let snapshot = dataSource.snapshot()
