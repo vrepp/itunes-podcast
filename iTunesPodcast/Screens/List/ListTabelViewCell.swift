@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Combine
+import Kingfisher
 
 final class ListTabelViewCell: UITableViewCell {
     // MARK: Constants
@@ -69,6 +69,13 @@ final class ListTabelViewCell: UITableViewCell {
         setupUI()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        thumbImageView.kf.cancelDownloadTask()
+        thumbImageView.image = nil
+    }
+    
     // MARK: Setup
     private func setupUI() {
         let stackView = UIStackView()
@@ -98,5 +105,7 @@ extension ListTabelViewCell {
     func bind(to viewModel: PodcastViewModel) {
         artistNameLabel.text = viewModel.artistName
         trackNameLabel.text = viewModel.trackName
+        
+        thumbImageView.kf.setImage(with: viewModel.imageURL)
     }
 }

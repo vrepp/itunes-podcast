@@ -10,22 +10,20 @@ import Foundation
 final class PodcastViewModel {
     
     @Published private(set) var title = "Details"
-    @Published var artistName: String = ""
-    @Published var trackName: String = ""
-    @Published var releaseDate: String = ""
+    @Published private(set) var artistName: String
+    @Published private(set) var trackName: String
+    @Published private(set) var releaseDate: String
+    @Published private(set) var imageURL: URL
     
     private let podcast: Podcast
     
     init(podcast: Podcast) {
         self.podcast = podcast
         
-        bind()
-    }
-    
-    private func bind() {
         artistName = podcast.artistName
         trackName = podcast.trackName
         releaseDate = podcast.releaseDate.string(with: .longDate)
+        imageURL = podcast.artworkUrl100
     }
 }
 

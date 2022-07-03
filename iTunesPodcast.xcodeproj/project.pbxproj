@@ -43,6 +43,7 @@
 		A0D35C782871EA4400F8437D /* PodcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C772871EA4400F8437D /* PodcastView.swift */; };
 		A0D35C7A2871F0DC00F8437D /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C792871F0DC00F8437D /* DateFormatter+Extension.swift */; };
 		A0D35C7C2871F11800F8437D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D35C7B2871F11800F8437D /* Date+Extension.swift */; };
+		A0D35C7F28722D3700F8437D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A0D35C7E28722D3700F8437D /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0D35C7F28722D3700F8437D /* Kingfisher in Frameworks */,
 				A0D35C21286B98B600F8437D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +315,7 @@
 			name = iTunesPodcast;
 			packageProductDependencies = (
 				A0D35C20286B98B600F8437D /* SnapKit */,
+				A0D35C7E28722D3700F8437D /* Kingfisher */,
 			);
 			productName = iTunesPodcast;
 			productReference = A043808F2869F738000BAEED /* iTunesPodcast.app */;
@@ -388,6 +391,7 @@
 			mainGroup = A04380862869F738000BAEED;
 			packageReferences = (
 				A0D35C1F286B98B600F8437D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A0D35C7D28722D3700F8437D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = A04380902869F738000BAEED /* Products */;
 			projectDirPath = "";
@@ -810,6 +814,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		A0D35C7D28722D3700F8437D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -817,6 +829,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A0D35C1F286B98B600F8437D /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		A0D35C7E28722D3700F8437D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0D35C7D28722D3700F8437D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

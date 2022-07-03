@@ -62,5 +62,10 @@ final class PodcastViewController: UIViewController, MainViewCustomizable {
             .receive(on: RunLoop.main)
             .sink { [weak self] in self?.mainView.releaseDateLabel.text = $0 }
             .store(in: &subscriptions)
+        
+        viewModel.$imageURL
+            .receive(on: RunLoop.main)
+            .sink { [weak self] in self?.mainView.thumbImageView.kf.setImage(with: $0) }
+            .store(in: &subscriptions)
     }
 }
